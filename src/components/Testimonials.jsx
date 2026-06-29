@@ -4,19 +4,19 @@ import { Quote } from 'lucide-react';
 export default function Testimonials() {
   const reviews = [
     {
-      name: 'John Doe',
-      role: 'CEO at TechVision',
-      initials: 'JD',
+      name: 'Yohannes Kebede',
+      role: 'Lead Organizer at GDG Addis',
+      initials: 'YK',
       quote:
-        'Abrham is a rare talent who understands both the technical depth and the product vision. The mobile app he delivered surpassed our expectations in every way.',
+        'Abrham is an outstanding engineer and a proactive community contributor. His workshops on Flutter and clean application architecture have inspired countless developers in our Google Developer Group.',
       color: 'from-accentBlue to-indigo-500',
     },
     {
-      name: 'Sarah Miller',
-      role: 'CTO at GreenTech',
-      initials: 'SM',
+      name: 'Rediet Belay',
+      role: 'AWS Club Lead at AASTU',
+      initials: 'RB',
       quote:
-        'Reliability, speed, and exceptional code quality. Abrham helped us scale our entire infrastructure to React seamlessly while maintaining 100% uptime.',
+        'Working alongside Abrham on distributed cloud applications has been incredible. His skills in scaling serverless systems and designing secure backend APIs with Node.js and AWS are exceptional.',
       color: 'from-accentPurple to-pink-500',
     },
   ];
