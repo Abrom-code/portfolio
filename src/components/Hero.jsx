@@ -37,6 +37,23 @@ const LinkedinIcon = ({ size = 18, ...props }) => (
   </svg>
 );
 
+const TelegramIcon = ({ size = 18, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    stroke="currentColor"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="m22 2-7 20-4-9-9-4Z" />
+    <path d="M22 2 11 13" />
+  </svg>
+);
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
@@ -77,7 +94,8 @@ export default function Hero() {
               <ArrowRight size={16} />
             </a>
             <a
-              href="#contact"
+              href="/resume.pdf"
+              download="Abrham_Teramed_CV.pdf"
               className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 font-semibold text-sm transition-all duration-300"
             >
               Download CV
@@ -104,6 +122,15 @@ export default function Hero() {
             >
               <LinkedinIcon size={18} />
               LinkedIn
+            </a>
+            <a
+              href="https://t.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white transition-colors text-sm font-medium"
+            >
+              <TelegramIcon size={18} />
+              Telegram
             </a>
             <a
               href="mailto:gmikael1908@gmail.com"

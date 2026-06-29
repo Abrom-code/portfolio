@@ -36,6 +36,14 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
+            href="https://t.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+          >
+            Telegram
+          </a>
+          <a
             href="mailto:gmikael1908@gmail.com"
             className="font-sans text-xs font-semibold text-slate-400 hover:text-white transition-colors"
           >
