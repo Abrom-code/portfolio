@@ -8,11 +8,18 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (form.name && form.email && form.message) {
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${form.name}`);
+      const body = encodeURIComponent(`Sender: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+      const mailtoUrl = `mailto:gmikael1908@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open default mail client
+      window.location.href = mailtoUrl;
+
       setSubmitted(true);
       setTimeout(() => {
         setForm({ name: '', email: '', message: '' });
         setSubmitted(false);
-      }, 3000);
+      }, 4000);
     }
   };
 
