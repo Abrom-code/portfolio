@@ -11,17 +11,17 @@ export default function Projects({ onViewAll, onViewDetail }) {
       mockupType: 'mobile',
     },
     {
+      id: 'amharic-typing',
+      title: 'Amharic Typing',
+      description: 'Interactive web platform designed to improve typing speed and accuracy through Amharic lessons and real-time practice.',
+      tags: ['REACT', 'TAILWIND CSS', 'JAVASCRIPT'],
+      mockupType: 'desktop',
+    },
+    {
       id: 'eshetalehu',
       title: 'Eshetalehu',
       description: 'Marketplace application that connects buyers and sellers of used goods in a secure environment with real-time chat.',
       tags: ['FLUTTER', 'SUPABASE', 'FIREBASE'],
-      mockupType: 'mobile',
-    },
-    {
-      id: 'shop',
-      title: 'Shop E-commerce',
-      description: 'Flutter-based e-commerce application with fast product browsing, secure authentication, and cloud-based MongoDB sync.',
-      tags: ['FLUTTER', 'MONGODB', 'FIREBASE'],
       mockupType: 'mobile',
     },
   ];
@@ -49,7 +49,7 @@ export default function Projects({ onViewAll, onViewDetail }) {
               Selected Works
             </h2>
             <p className="font-sans text-slate-400 max-w-sm">
-              Discover my latest mobile applications and product developments.
+              Discover my latest applications and product developments.
             </p>
           </div>
           <a
@@ -74,24 +74,48 @@ export default function Projects({ onViewAll, onViewDetail }) {
               <div className="h-64 md:h-72 bg-[#0E0F12] border-b border-white/5 flex items-center justify-center p-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-accentIndigo/5 to-accentPurple/5 opacity-50" />
                 
-                {/* Phone Mockup for mobile projects */}
-                <div className="w-36 h-[240px] rounded-[24px] bg-darkBg border-[3px] border-white/10 p-2 shadow-2xl relative transform translate-y-6 group-hover:translate-y-3 group-hover:-rotate-2 transition-all duration-500">
-                  <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-2.5 bg-black rounded-full" />
-                  <div className="h-full rounded-[18px] bg-darkCard/80 p-2 flex flex-col justify-between pt-4 overflow-hidden">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="w-4 h-4 rounded-full bg-accentBlue/20" />
-                      <span className="w-8 h-2 rounded bg-white/10" />
-                    </div>
-                    
-                    {/* Visual inner details mock */}
-                    <div className="my-auto flex flex-col items-center gap-1">
-                      <div className="w-12 h-12 rounded-full border-2 border-accentBlue/20 border-t-accentBlue animate-spin-slow relative flex items-center justify-center" />
-                      <div className="w-12 h-2 rounded bg-white/10" />
-                    </div>
+                {project.mockupType === 'mobile' ? (
+                  /* Phone Mockup */
+                  <div className="w-32 h-[210px] rounded-[24px] bg-darkBg border-[3px] border-white/10 p-2 shadow-2xl relative transform translate-y-6 group-hover:translate-y-3 group-hover:-rotate-2 transition-all duration-500">
+                    <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-2 bg-black rounded-full" />
+                    <div className="h-full rounded-[18px] bg-darkCard/80 p-2 flex flex-col justify-between pt-3 overflow-hidden">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="w-3 h-3 rounded-full bg-accentBlue/20" />
+                        <span className="w-6 h-1.5 rounded bg-white/10" />
+                      </div>
+                      
+                      {/* Visual inner details mock */}
+                      <div className="my-auto flex flex-col items-center gap-1">
+                        <div className="w-8 h-8 rounded-full border-2 border-accentBlue/20 border-t-accentBlue animate-spin-slow" />
+                      </div>
 
-                    <div className="h-4 w-full rounded bg-accentIndigo" />
+                      <div className="h-3 w-full rounded bg-accentIndigo" />
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  /* Desktop Browser Mockup */
+                  <div className="w-56 h-[170px] rounded-xl bg-darkBg border-[3px] border-white/10 p-1.5 shadow-2xl relative transform translate-y-6 group-hover:translate-y-3 group-hover:rotate-1 transition-all duration-500">
+                    {/* Browser top bar */}
+                    <div className="flex gap-1 border-b border-white/5 pb-1 mb-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                    </div>
+                    {/* Browser client area mock */}
+                    <div className="h-[125px] rounded-md bg-darkCard/80 p-2 flex flex-col justify-between overflow-hidden">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="w-12 h-2.5 rounded bg-white/10" />
+                        <span className="w-4 h-4 rounded-full bg-accentPurple/25" />
+                      </div>
+                      <div className="space-y-1.5 my-auto">
+                        <div className="w-full h-2 rounded bg-white/5" />
+                        <div className="w-4/5 h-2 rounded bg-white/5" />
+                        <div className="w-3/5 h-2 rounded bg-white/5" />
+                      </div>
+                      <div className="h-3 w-16 rounded bg-accentPurple" />
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Text Description Box */}
@@ -113,7 +137,7 @@ export default function Projects({ onViewAll, onViewDetail }) {
                     <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transform translate-y-0.5 group-hover:translate-y-0 transition-all duration-300" />
                   </h3>
 
-                  <p className="font-sans text-xs text-slate-400 leading-relaxed">
+                  <p className="font-sans text-xs text-slate-400 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
                 </div>
