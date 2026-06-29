@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, ArrowRight, Download } from 'lucide-react';
+import resumePdf from '../assets/Abrham Teramed.pdf';
 
 // Custom inline SVG icons matching Lucide style
 const GithubIcon = ({ size = 18, ...props }) => (
@@ -94,7 +95,7 @@ export default function Hero() {
               <ArrowRight size={16} />
             </a>
             <a
-              href="/resume.pdf"
+              href={resumePdf}
               download="Abrham_Teramed_CV.pdf"
               className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 font-semibold text-sm transition-all duration-300"
             >
