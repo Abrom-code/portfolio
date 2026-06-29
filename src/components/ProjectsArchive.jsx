@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ChevronDown, ExternalLink, ArrowUpRight, PlusCircle, ArrowRight } from 'lucide-react';
+import { Search, ChevronDown, ExternalLink, ArrowUpRight, ArrowRight } from 'lucide-react';
 
 // Custom inline SVG icons matching Lucide style
 const GithubIcon = ({ size = 16, ...props }) => (
@@ -456,45 +456,6 @@ export default function ProjectsArchive({ onViewProject }) {
             </div>
           ))}
 
-          {/* Submit Project Placeholder Card */}
-          <div className="border-2 border-dashed border-white/10 hover:border-accentBlue/40 rounded-3xl p-6 min-h-[360px] flex flex-col items-center justify-center text-center group cursor-pointer transition-all duration-300 relative">
-            <div className="space-y-4">
-              <PlusCircle className="mx-auto text-slate-500 group-hover:text-accentBlue group-hover:scale-110 transition-all duration-300" size={36} />
-              <div className="space-y-1">
-                <h3 className="font-outfit text-base font-bold text-white group-hover:text-accentBlue transition-colors">
-                  SUBMIT PROJECT
-                </h3>
-                <p className="font-sans text-xs text-slate-500 max-w-[200px] leading-relaxed">
-                  Have an exceptional project ideas in mind? Let's build together.
-                </p>
-              </div>
-            </div>
-            {/* Invisible overlay linking to contact */}
-            <a href="#contact" className="absolute inset-0 z-10" />
-          </div>
-        </div>
-
-        {/* Pagination Grid Controls */}
-        <div className="flex items-center justify-center gap-2 pt-8">
-          <button className="p-2 rounded-lg bg-darkCard border border-white/5 text-slate-400 hover:text-white hover:border-white/10 transition-all duration-300 cursor-not-allowed" disabled>
-            &lt;
-          </button>
-          <button className="w-8 h-8 rounded-lg bg-accentBlue text-black font-outfit text-xs font-bold transition-all duration-300">
-            1
-          </button>
-          <button className="w-8 h-8 rounded-lg bg-darkCard border border-white/5 text-slate-400 hover:text-white hover:border-white/10 font-outfit text-xs font-bold transition-all duration-300">
-            2
-          </button>
-          <button className="w-8 h-8 rounded-lg bg-darkCard border border-white/5 text-slate-400 hover:text-white hover:border-white/10 font-outfit text-xs font-bold transition-all duration-300">
-            3
-          </button>
-          <span className="text-slate-600 px-1">...</span>
-          <button className="w-8 h-8 rounded-lg bg-darkCard border border-white/5 text-slate-400 hover:text-white hover:border-white/10 font-outfit text-xs font-bold transition-all duration-300">
-            6
-          </button>
-          <button className="p-2 rounded-lg bg-darkCard border border-white/5 text-slate-400 hover:text-white hover:border-white/10 transition-all duration-300">
-            &gt;
-          </button>
         </div>
 
       </div>
