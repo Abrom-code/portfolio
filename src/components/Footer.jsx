@@ -36,7 +36,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://t.me/"
+            href="https://t.me/howdes"
             target="_blank"
             rel="noopener noreferrer"
             className="font-sans text-xs font-semibold text-slate-400 hover:text-white transition-colors"

@@ -124,7 +124,7 @@ export default function Hero() {
               LinkedIn
             </a>
             <a
-              href="https://t.me/"
+              href="https://t.me/howdes"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-white transition-colors text-sm font-medium"
