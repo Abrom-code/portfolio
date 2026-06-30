@@ -16,7 +16,7 @@ export default function Header({ page = 'home', setPage }) {
 
       // Only track active sections on home page
       if (page === 'home') {
-        const sections = ['skills', 'projects', 'contact'];
+        const sections = ['skills', 'projects', 'certifications', 'contact'];
         for (const section of sections) {
           const element = document.getElementById(section);
           if (element) {
@@ -39,6 +39,7 @@ export default function Header({ page = 'home', setPage }) {
   const navLinks = [
     { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Certifications', href: '#certifications', id: 'certifications' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 

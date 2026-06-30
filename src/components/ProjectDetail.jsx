@@ -1,5 +1,40 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, ArrowRight, ShieldCheck, Cpu, Database, Award, BarChart2, Fingerprint, Wallet, CreditCard, Layers, Compass, Code, Smartphone, Monitor } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, Cpu, Database, Award, BarChart2, Fingerprint, Wallet, CreditCard, Layers, Compass, Code, Smartphone, Monitor, ExternalLink } from 'lucide-react';
+import projectsData from '../data/projects.json';
+
+// Custom inline SVG icons matching Lucide style
+const GithubIcon = ({ size = 16, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    stroke="currentColor"
+    strokeWidth="2"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const iconMap = {
+  Layers,
+  Award,
+  ShieldCheck,
+  Compass,
+  Code,
+  Cpu,
+  Database,
+  BarChart2,
+  Fingerprint,
+  Wallet,
+  CreditCard,
+  Smartphone,
+  Monitor
+};
 
 export default function ProjectDetail({ projectId, onBack, onNavigate }) {
   // Scroll to top when loading a new project detail
@@ -7,398 +42,12 @@ export default function ProjectDetail({ projectId, onBack, onNavigate }) {
     window.scrollTo(0, 0);
   }, [projectId]);
 
-  // Project details database containing all 9 projects
-  const projectDetails = {
-    matricmate: {
-      id: 'matricmate',
-      title: 'MatricMate',
-      subtitle: 'Comprehensive mobile learning platform that centralizes practice questions from Grades 9–12 for the Ethiopian Matric Examination.',
-      role: 'Flutter Developer',
-      techStack: 'Flutter, Supabase, Firebase',
-      duration: '6 Months',
-      problem: 'Preparing for the Ethiopian Matric Examination often requires students to gather questions from multiple sources, making revision inconsistent and time-consuming. Many learners also lack access to organized topic-based practice across all high school grades.',
-      solution: 'MatricMate was built as a comprehensive mobile learning platform that centralizes practice questions from Grades 9–12. The application provides topic-based exercises alongside model and previous national examination questions, enabling students to prepare efficiently from a single application.',
-      features: [
-        {
-          title: 'Topic-Based Learning',
-          description: 'Practice questions organized by subject and topic across Grades 9–12.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Model & Previous Exams',
-          description: 'Access to model examinations and previous national Matric exam papers.',
-          icon: <Award className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Secure Authentication',
-          description: 'Firebase Authentication provides a secure and seamless login experience.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Progress-Oriented Experience',
-          description: 'Designed to encourage consistent study through an intuitive and distraction-free interface.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'The application follows a scalable architecture that separates business logic from presentation while maintaining responsive performance.',
-      architectureBullets: ['GETX STATE MANAGEMENT', 'SUPABASE DATABASE', 'FIREBASE AUTHENTICATION'],
-      techBadges: [
-        { label: 'UI Framework', value: 'Flutter' },
-        { label: 'Language', value: 'Dart' },
-        { label: 'Backend', value: 'Supabase' },
-        { label: 'Authentication', value: 'Firebase' },
-      ],
-      nextProject: {
-        id: 'eshetalehu',
-        title: 'Eshetalehu',
-      },
-    },
-    eshetalehu: {
-      id: 'eshetalehu',
-      title: 'Eshetalehu',
-      subtitle: 'Marketplace application that connects buyers and sellers of used goods in a secure environment with real-time chat.',
-      role: 'Flutter Developer',
-      techStack: 'Flutter, Supabase, Firebase',
-      duration: '5 Months',
-      problem: 'Buying and selling second-hand products through social media often lacks trust, organization, and effective communication between buyers and sellers.',
-      solution: 'Eshetalehu is a marketplace application that connects buyers and sellers of used goods in a secure and user-friendly environment, complete with real-time messaging.',
-      features: [
-        {
-          title: 'Marketplace Listings',
-          description: 'Browse and publish second-hand products with detailed information.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Real-Time Chat',
-          description: 'Direct communication between buyers and sellers.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Secure User Accounts',
-          description: 'Firebase Authentication ensures secure user access.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Smart Product Browsing',
-          description: 'Simple interface for discovering products quickly.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Built using modern Flutter architecture for maintainability and scalability.',
-      architectureBullets: ['BLOC STATE MANAGEMENT', 'SUPABASE DATABASE', 'FIREBASE AUTHENTICATION'],
-      techBadges: [
-        { label: 'UI Framework', value: 'Flutter' },
-        { label: 'Language', value: 'Dart' },
-        { label: 'Backend', value: 'Supabase' },
-        { label: 'Authentication', value: 'Firebase' },
-      ],
-      nextProject: {
-        id: 'amharic-typing',
-        title: 'Amharic Typing',
-      },
-    },
-    'amharic-typing': {
-      id: 'amharic-typing',
-      title: 'Amharic Typing',
-      subtitle: 'Interactive web platform designed to improve typing speed and accuracy through Amharic lessons and real-time practice.',
-      role: 'Frontend Developer',
-      techStack: 'React, Tailwind CSS',
-      duration: '3 Months',
-      problem: 'There are very few dedicated platforms that help Ethiopians improve their Amharic typing skills, making it difficult for learners to practice efficiently.',
-      solution: 'Amharic Typing is an interactive web platform designed to improve typing speed and accuracy through structured lessons and real-time practice sessions.',
-      features: [
-        {
-          title: 'Interactive Lessons',
-          description: 'Guided lessons for learning Amharic keyboard layouts.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Live Typing Practice',
-          description: 'Measure typing speed and accuracy in real time.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Progress Tracking',
-          description: 'Monitor improvement across practice sessions.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Responsive Interface',
-          description: 'Optimized for desktop and mobile browsers.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'A lightweight frontend application focused on speed and responsiveness.',
-      architectureBullets: ['REACT', 'TAILWIND CSS', 'RESPONSIVE DESIGN'],
-      techBadges: [
-        { label: 'Frontend', value: 'React' },
-        { label: 'Styling', value: 'Tailwind CSS' },
-        { label: 'Language', value: 'JavaScript' },
-      ],
-      nextProject: {
-        id: 'ethioride',
-        title: 'EthioRide',
-      },
-    },
-    ethioride: {
-      id: 'ethioride',
-      title: 'EthioRide',
-      subtitle: 'Distributed ride-booking application simulating ride-sharing workflows while demonstrating networking and concurrency concepts.',
-      role: 'Java Developer',
-      techStack: 'Java, MySQL',
-      duration: '4 Months',
-      problem: 'Ride-hailing platforms require efficient request management, driver coordination, and reliable communication between multiple users.',
-      solution: 'EthioRide is a distributed ride-booking application developed to simulate the core workflow of modern ride-sharing platforms while demonstrating networking and concurrent programming concepts.',
-      features: [
-        {
-          title: 'Ride Requests',
-          description: 'Passengers can request transportation services.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Driver Management',
-          description: 'Drivers receive and manage ride requests.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Concurrent Sync',
-          description: 'Supports multiple connected clients simultaneously.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Database Integration',
-          description: 'Persistent ride and user information storage.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Designed as a distributed Java application with networking support.',
-      architectureBullets: ['MULTITHREADED SERVER', 'JAVA SOCKET PROGRAMMING', 'MYSQL DATABASE'],
-      techBadges: [
-        { label: 'Language', value: 'Java' },
-        { label: 'Database', value: 'MySQL' },
-      ],
-      nextProject: {
-        id: 'noteify',
-        title: 'Noteify',
-      },
-    },
-    noteify: {
-      id: 'noteify',
-      title: 'Noteify',
-      subtitle: 'Lightweight note-taking web application to organize, edit, and manage personal notes with persistent storage.',
-      role: 'Full-Stack Developer',
-      techStack: 'PHP, MySQL, JS',
-      duration: '2 Months',
-      problem: 'Students and professionals need a simple platform for organizing notes without unnecessary complexity.',
-      solution: 'Noteify is a lightweight web application that enables users to create, organize, edit, and manage personal notes.',
-      features: [
-        {
-          title: 'Create Notes',
-          description: 'Quickly create and organize notes.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'CRUD functionality',
-          description: 'Manage notes with full CRUD actions.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Clean Interface',
-          description: 'Simple and responsive design layout.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Persistent Storage',
-          description: 'Notes stored securely in a MySQL database.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Traditional client-server web architecture.',
-      architectureBullets: ['HTML / CSS / JS', 'PHP BACKEND', 'MYSQL DATABASE'],
-      techBadges: [
-        { label: 'Frontend', value: 'HTML, CSS, JS' },
-        { label: 'Backend', value: 'PHP' },
-        { label: 'Database', value: 'MySQL' },
-      ],
-      nextProject: {
-        id: 'intelicoach',
-        title: 'InteliCoach',
-      },
-    },
-    intelicoach: {
-      id: 'intelicoach',
-      title: 'InteliCoach',
-      subtitle: 'Java-based student coaching desktop application designed to organize study schedules, task priorities, and goals.',
-      role: 'Java Developer',
-      techStack: 'Java, MySQL',
-      duration: '3 Months',
-      problem: 'Students often struggle with effective time management, resulting in poor study habits and reduced productivity.',
-      solution: 'InteliCoach helps students organize their schedules, prioritize tasks, and build productive study routines.',
-      features: [
-        {
-          title: 'Task Scheduling',
-          description: 'Create and organize daily study plans.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Time Management',
-          description: 'Manage study sessions efficiently.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Goal Tracking',
-          description: 'Track completed activities.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Student Dashboard',
-          description: 'Simple interface for monitoring progress.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Desktop application built with Java and MySQL.',
-      architectureBullets: ['JAVA', 'MYSQL DATABASE', 'MVC DESIGN'],
-      techBadges: [
-        { label: 'Language', value: 'Java' },
-        { label: 'Database', value: 'MySQL' },
-      ],
-      nextProject: {
-        id: 'exam-system',
-        title: 'Exam Management System',
-      },
-    },
-    'exam-system': {
-      id: 'exam-system',
-      title: 'Exam Management System',
-      subtitle: 'Performance-focused C++ desktop examination management system enabling online test administration and automatic results.',
-      role: 'C++ Developer',
-      techStack: 'C++, MySQL',
-      duration: '4 Months',
-      problem: 'Educational institutions require efficient systems for conducting online examinations while maintaining organized records.',
-      solution: 'An examination management system that enables online test administration and result management.',
-      features: [
-        {
-          title: 'Online Exams',
-          description: 'Conduct examinations digitally.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Student Management',
-          description: 'Manage registered candidates.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Question Manager',
-          description: 'Store and organize examination questions.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Result Processing',
-          description: 'Automatically calculate examination results.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Performance-focused desktop application.',
-      architectureBullets: ['C++', 'MYSQL DATABASE', 'OBJECT-ORIENTED DESIGN'],
-      techBadges: [
-        { label: 'Language', value: 'C++' },
-        { label: 'Database', value: 'MySQL' },
-      ],
-      nextProject: {
-        id: 'task-manager',
-        title: 'Task Manager',
-      },
-    },
-    'task-manager': {
-      id: 'task-manager',
-      title: 'Task Manager',
-      subtitle: 'Lightweight task management web application designed to organize work efficiently through a clean user experience.',
-      role: 'Frontend Developer',
-      techStack: 'React, Tailwind CSS',
-      duration: '2 Months',
-      problem: 'Managing daily tasks can become overwhelming without a simple and intuitive productivity tool.',
-      solution: 'A lightweight task management application designed to organize work efficiently through a clean user experience.',
-      features: [
-        {
-          title: 'Task Organization',
-          description: 'Create and manage daily tasks.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Status Tracking',
-          description: 'Monitor completed and pending work.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Responsive Layout',
-          description: 'Works across desktop and mobile devices.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Clean UX',
-          description: 'Minimal interface focused on productivity.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Modern frontend application.',
-      architectureBullets: ['REACT', 'TAILWIND CSS', 'COMPONENT-BASED ARCHITECTURE'],
-      techBadges: [
-        { label: 'Frontend', value: 'React' },
-        { label: 'Styling', value: 'Tailwind CSS' },
-        { label: 'Language', value: 'JavaScript' },
-      ],
-      nextProject: {
-        id: 'shop',
-        title: 'Shop',
-      },
-    },
-    shop: {
-      id: 'shop',
-      title: 'Shop',
-      subtitle: 'Flutter-based e-commerce application that enables users to browse products, manage carts, and authenticate using Firebase.',
-      role: 'Flutter Developer',
-      techStack: 'Flutter, MongoDB, Firebase',
-      duration: '5 Months',
-      problem: 'Modern e-commerce platforms should provide fast product browsing, secure authentication, and a seamless shopping experience on mobile devices.',
-      solution: 'Shop is a Flutter-based e-commerce application that enables users to browse products, manage their shopping experience, and securely authenticate using Firebase.',
-      features: [
-        {
-          title: 'Product Catalog',
-          description: 'Browse products through an organized interface.',
-          icon: <Layers className="text-accentBlue" size={20} />,
-        },
-        {
-          title: 'Secure Auth',
-          description: 'Firebase Authentication for secure user accounts.',
-          icon: <Code className="text-accentPurple" size={20} />,
-        },
-        {
-          title: 'Mobile-first Shopping',
-          description: 'Designed with a modern mobile-first interface.',
-          icon: <ShieldCheck className="text-indigo-400" size={20} />,
-        },
-        {
-          title: 'Cloud Database',
-          description: 'Product and user data managed through MongoDB.',
-          icon: <Compass className="text-pink-400" size={20} />,
-        },
-      ],
-      architectureText: 'Built using Flutter with cloud-based backend services.',
-      architectureBullets: ['FLUTTER', 'MONGODB DATABASE', 'FIREBASE AUTHENTICATION'],
-      techBadges: [
-        { label: 'UI Framework', value: 'Flutter' },
-        { label: 'Language', value: 'Dart' },
-        { label: 'Database', value: 'MongoDB' },
-        { label: 'Authentication', value: 'Firebase' },
-      ],
-      nextProject: {
-        id: 'matricmate',
-        title: 'MatricMate',
-      },
-    },
-  };
+  const project = projectsData.find(p => p.id === projectId) || projectsData[0];
 
-  const project = projectDetails[projectId] || projectDetails.matricmate;
+  // Compute next project dynamically
+  const currentIndex = projectsData.findIndex(p => p.id === project.id);
+  const nextIndex = (currentIndex + 1) % projectsData.length;
+  const nextProject = projectsData[nextIndex];
 
   return (
     <div className="bg-[#090A0C] min-h-screen text-slate-300 pt-28 pb-16 relative overflow-hidden text-left">
@@ -418,13 +67,46 @@ export default function ProjectDetail({ projectId, onBack, onNavigate }) {
 
         {/* Project Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8 space-y-4">
+          <div className="lg:col-span-8 space-y-6">
             <h1 className="font-outfit text-5xl md:text-6xl font-extrabold text-white tracking-tight">
               {project.title}
             </h1>
             <p className="font-sans text-lg text-slate-400 leading-relaxed max-w-2xl">
               {project.subtitle}
             </p>
+
+            {/* Action buttons (GitHub and Live Demo) */}
+            <div className="flex items-center gap-4 pt-2">
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-xs border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg"
+              >
+                <GithubIcon size={14} className="text-slate-300" />
+                GitHub Repository
+              </a>
+              {project.demoLink ? (
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-3 rounded-xl bg-accentIndigo hover:bg-accentIndigo/90 text-white font-semibold text-xs transition-colors shadow-lg shadow-accentIndigo/25"
+                >
+                  <ExternalLink size={14} />
+                  Live Demo
+                </a>
+              ) : (
+                <button
+                  disabled
+                  className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/5 text-slate-600 cursor-not-allowed font-semibold text-xs opacity-50"
+                  title="No demo available for this project"
+                >
+                  <ExternalLink size={14} />
+                  No Demo Available
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Project Details Columns */}
@@ -548,24 +230,27 @@ export default function ProjectDetail({ projectId, onBack, onNavigate }) {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {project.features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-darkCard border border-white/5 text-left flex flex-col justify-between gap-6 hover:border-white/10 hover:bg-darkCardHover transition-colors"
-              >
-                <div className="p-2.5 rounded-xl bg-white/5 w-fit">
-                  {feature.icon}
+            {project.features.map((feature, idx) => {
+              const IconComponent = iconMap[feature.icon] || Code;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 rounded-2xl bg-darkCard border border-white/5 text-left flex flex-col justify-between gap-6 hover:border-white/10 hover:bg-darkCardHover transition-colors"
+                >
+                  <div className="p-2.5 rounded-xl bg-white/5 w-fit">
+                    <IconComponent className={feature.iconColor} size={20} />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-outfit text-base font-bold text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="font-sans text-xs text-slate-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-outfit text-base font-bold text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="font-sans text-xs text-slate-400 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -603,7 +288,7 @@ export default function ProjectDetail({ projectId, onBack, onNavigate }) {
 
         {/* Next Project Call To Action Banner */}
         <div
-          onClick={() => onNavigate(project.nextProject.id)}
+          onClick={() => onNavigate(nextProject.id)}
           className="rounded-3xl bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-transparent border border-white/5 hover:border-white/10 p-12 text-center relative overflow-hidden group cursor-pointer shadow-2xl pt-20 pb-20 transition-all duration-300"
         >
           {/* Glowing backdrops inside banner */}
@@ -612,7 +297,7 @@ export default function ProjectDetail({ projectId, onBack, onNavigate }) {
           <div className="relative z-10 space-y-4">
             <span className="font-outfit text-[10px] font-bold text-accentBlue uppercase tracking-widest block">Up Next</span>
             <h3 className="font-outfit text-4xl font-extrabold text-white group-hover:text-accentBlue transition-colors leading-[1.2]">
-              {project.nextProject.title}
+              {nextProject.title}
             </h3>
             <div className="inline-flex items-center gap-1.5 font-sans text-xs font-bold text-white/80 group-hover:text-white transition-colors">
               View Project

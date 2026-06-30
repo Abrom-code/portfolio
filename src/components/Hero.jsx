@@ -63,7 +63,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-10 glow-backdrop w-[600px] h-[600px] opacity-75" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        
+
         {/* Left Content Column */}
         <div className="lg:col-span-7 space-y-8 text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentIndigo/10 border border-accentIndigo/20">
@@ -96,7 +96,7 @@ export default function Hero() {
             </a>
             <a
               href={resumePdf}
-              download="Abrham_Teramed_CV.pdf"
+              download="Abrham Teramed.pdf"
               className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 font-semibold text-sm transition-all duration-300"
             >
               Download CV
@@ -147,7 +147,7 @@ export default function Hero() {
         <div className="lg:col-span-5 relative h-[500px] flex items-center justify-center">
           {/* Main Container for Graphic Elements */}
           <div className="relative w-full max-w-md h-full flex items-center justify-center">
-            
+
             {/* Desktop Dashboard Card (Background) */}
             <div className="absolute right-0 top-16 w-80 h-56 rounded-2xl bg-darkCard border border-white/5 p-4 shadow-2xl transition-all duration-500 hover:border-white/10 animate-float-slow">
               {/* Browser Header */}
@@ -159,7 +159,7 @@ export default function Hero() {
                 </div>
                 <div className="w-32 h-3 rounded-full bg-white/5" />
               </div>
-              
+
               {/* Dashboard Content Mock */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
@@ -218,11 +218,11 @@ export default function Hero() {
             <div className="absolute left-0 top-12 z-30 px-3 py-1.5 rounded-full bg-darkBg/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-accentBlue shadow-lg hover:border-accentBlue/40 transition-colors animate-float-slow">
               Flutter
             </div>
-            
+
             <div className="absolute right-4 bottom-14 z-30 px-3 py-1.5 rounded-full bg-darkBg/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-accentPurple shadow-lg hover:border-accentPurple/40 transition-colors animate-float-medium">
               React
             </div>
-            
+
             <div className="absolute right-20 top-2 z-30 px-3 py-1.5 rounded-full bg-darkBg/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white shadow-lg hover:border-white/20 transition-colors animate-float-fast">
               Firebase
             </div>
@@ -230,7 +230,7 @@ export default function Hero() {
             <div className="absolute left-40 bottom-6 z-30 px-3 py-1.5 rounded-full bg-darkBg/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-indigo-400 shadow-lg hover:border-indigo-400/40 transition-colors animate-float-slow">
               TailwindCSS
             </div>
-            
+
           </div>
         </div>
 

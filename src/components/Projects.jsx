@@ -1,30 +1,9 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import projectsData from '../data/projects.json';
 
 export default function Projects({ onViewAll, onViewDetail }) {
-  const projects = [
-    {
-      id: 'matricmate',
-      title: 'MatricMate',
-      description: 'Comprehensive mobile learning platform that centralizes practice questions from Grades 9–12 for the Ethiopian Matric Examination.',
-      tags: ['FLUTTER', 'SUPABASE', 'FIREBASE'],
-      mockupType: 'mobile',
-    },
-    {
-      id: 'amharic-typing',
-      title: 'Amharic Typing',
-      description: 'Interactive web platform designed to improve typing speed and accuracy through Amharic lessons and real-time practice.',
-      tags: ['REACT', 'TAILWIND CSS', 'JAVASCRIPT'],
-      mockupType: 'desktop',
-    },
-    {
-      id: 'eshetalehu',
-      title: 'Eshetalehu',
-      description: 'Marketplace application that connects buyers and sellers of used goods in a secure environment with real-time chat.',
-      tags: ['FLUTTER', 'SUPABASE', 'FIREBASE'],
-      mockupType: 'mobile',
-    },
-  ];
+  const projects = projectsData.filter(project => project.homeFeatured);
 
   const handleViewAllClick = (e) => {
     e.preventDefault();

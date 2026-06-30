@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ChevronDown, ExternalLink, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { Search, ChevronDown, ExternalLink, ArrowRight } from 'lucide-react';
+import projectsData from '../data/projects.json';
 
 // Custom inline SVG icons matching Lucide style
 const GithubIcon = ({ size = 16, ...props }) => (
@@ -25,109 +26,7 @@ export default function ProjectsArchive({ onViewProject }) {
   const [sortBy, setSortBy] = useState('latest'); // 'latest' | 'name'
 
   // Archive projects database containing all 9 projects
-  const allProjects = useMemo(() => [
-    {
-      id: 'matricmate',
-      title: 'MatricMate',
-      subtitle: 'Comprehensive mobile learning platform that centralizes practice questions from Grades 9–12 for the Ethiopian Matric Examination.',
-      category: 'MOBILE APPS',
-      categoryTag: 'EDUCATION • MOBILE APP',
-      status: 'Completed',
-      year: '2026',
-      featured: true,
-      tags: ['FLUTTER', 'SUPABASE', 'FIREBASE', 'GETX'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'eshetalehu',
-      title: 'Eshetalehu',
-      subtitle: 'Marketplace application that connects buyers and sellers of used goods in a secure environment with real-time chat.',
-      category: 'MOBILE APPS',
-      categoryTag: 'MARKETPLACE • MOBILE APP',
-      year: '2025',
-      tags: ['FLUTTER', 'SUPABASE', 'FIREBASE', 'BLOC'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'amharic-typing',
-      title: 'Amharic Typing',
-      subtitle: 'Interactive web platform designed to improve typing speed and accuracy through Amharic lessons and real-time practice.',
-      category: 'FULL-STACK',
-      categoryTag: 'EDUCATION • WEB APP',
-      year: '2024',
-      tags: ['REACT', 'TAILWIND CSS', 'JAVASCRIPT'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'ethioride',
-      title: 'EthioRide',
-      subtitle: 'Distributed ride-booking application simulating ride-sharing workflows while demonstrating networking and concurrency concepts.',
-      category: 'BACKEND',
-      categoryTag: 'NETWORKING • DISTRIBUTED APP',
-      year: '2024',
-      tags: ['JAVA', 'JAVA SOCKETS', 'MYSQL'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'noteify',
-      title: 'Noteify',
-      subtitle: 'Lightweight note-taking web application to organize, edit, and manage personal notes with persistent storage.',
-      category: 'FULL-STACK',
-      categoryTag: 'PRODUCTIVITY • WEB APP',
-      year: '2023',
-      tags: ['HTML', 'CSS', 'JAVASCRIPT', 'PHP', 'MYSQL'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'intelicoach',
-      title: 'InteliCoach',
-      subtitle: 'Java-based student coaching desktop application designed to organize study schedules, task priorities, and goals.',
-      category: 'BACKEND',
-      categoryTag: 'UTILITY • DESKTOP APP',
-      year: '2023',
-      tags: ['JAVA', 'MYSQL', 'MVC DESIGN'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'exam-system',
-      title: 'Exam Management System',
-      subtitle: 'Performance-focused C++ desktop examination management system enabling online test administration and automatic results.',
-      category: 'BACKEND',
-      categoryTag: 'EDUCATION • DESKTOP APP',
-      year: '2023',
-      tags: ['C++', 'MYSQL', 'OBJECT-ORIENTED DESIGN'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'task-manager',
-      title: 'Task Manager',
-      subtitle: 'Lightweight task management web application designed to organize work efficiently through a clean user experience.',
-      category: 'FULL-STACK',
-      categoryTag: 'PRODUCTIVITY • WEB APP',
-      year: '2025',
-      tags: ['REACT', 'TAILWIND CSS', 'JAVASCRIPT'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-    {
-      id: 'shop',
-      title: 'Shop',
-      subtitle: 'Flutter-based e-commerce application that enables users to browse products, manage carts, and authenticate using Firebase.',
-      category: 'MOBILE APPS',
-      categoryTag: 'E-COMMERCE • MOBILE APP',
-      year: '2025',
-      tags: ['FLUTTER', 'MONGODB', 'FIREBASE'],
-      githubLink: 'https://github.com/Abrom-code/',
-      demoLink: '#',
-    },
-  ], []);
+  const allProjects = projectsData;
 
   // Filter Categories list
   const categories = ['ALL', 'MOBILE APPS', 'FULL-STACK', 'BACKEND', 'UI/UX'];
@@ -331,15 +230,29 @@ export default function ProjectsArchive({ onViewProject }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-[#090A0C] border border-white/5 hover:border-white/10 hover:text-white transition-colors"
+                  title="View GitHub Repository"
                 >
                   <GithubIcon size={16} />
                 </a>
-                <a
-                  href={featuredProject.demoLink}
-                  className="p-3 rounded-xl bg-[#090A0C] border border-white/5 hover:border-white/10 hover:text-white transition-colors"
-                >
-                  <ExternalLink size={16} />
-                </a>
+                {featuredProject.demoLink ? (
+                  <a
+                    href={featuredProject.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-[#090A0C] border border-white/5 hover:border-white/10 hover:text-white transition-colors"
+                    title="Live Demo"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="p-3 rounded-xl bg-[#090A0C]/40 border border-white/5 text-slate-600 cursor-not-allowed"
+                    title="No demo available for this project"
+                  >
+                    <ExternalLink size={16} className="opacity-50" />
+                  </button>
+                )}
               </div>
             </div>
 
@@ -431,15 +344,29 @@ export default function ProjectsArchive({ onViewProject }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-lg bg-[#090A0C] border border-white/5 hover:border-white/10 hover:text-white transition-colors"
+                        title="View GitHub Repository"
                       >
                         <GithubIcon size={12} />
                       </a>
-                      <a
-                        href={project.demoLink}
-                        className="p-2 rounded-lg bg-[#090A0C] border border-white/5 hover:border-white/10 hover:text-white transition-colors"
-                      >
-                        <ExternalLink size={12} />
-                      </a>
+                      {project.demoLink ? (
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-[#090A0C] border border-white/5 hover:border-white/10 hover:text-white transition-colors"
+                          title="Live Demo"
+                        >
+                          <ExternalLink size={12} />
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className="p-2 rounded-lg bg-[#090A0C]/40 border border-white/5 text-slate-600 cursor-not-allowed"
+                          title="No demo available for this project"
+                        >
+                          <ExternalLink size={12} className="opacity-50" />
+                        </button>
+                      )}
                     </div>
 
                     <button

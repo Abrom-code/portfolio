@@ -1,0 +1,488 @@
+[
+  {
+    "id": "matricmate",
+    "title": "MatricMate",
+    "subtitle": "Comprehensive mobile learning platform that centralizes practice questions from Grades 9–12 for the Ethiopian Matric Examination.",
+    "description": "Comprehensive mobile learning platform that centralizes practice questions from Grades 9–12 for the Ethiopian Matric Examination.",
+    "category": "MOBILE APPS",
+    "categoryTag": "EDUCATION • MOBILE APP",
+    "status": "Completed",
+    "year": "2026",
+    "featured": true,
+    "homeFeatured": true,
+    "tags": ["FLUTTER", "SUPABASE", "FIREBASE", "GETX"],
+    "githubLink": "https://github.com/Abrom-code/matricmate",
+    "demoLink": "",
+    "mockupType": "mobile",
+    "role": "Flutter Developer",
+    "techStack": "Flutter, Supabase, Firebase",
+    "duration": "6 Months",
+    "problem": "Preparing for the Ethiopian Matric Examination often requires students to gather questions from multiple sources, making revision inconsistent and time-consuming. Many learners also lack access to organized topic-based practice across all high school grades.",
+    "solution": "MatricMate was built as a comprehensive mobile learning platform that centralizes practice questions from Grades 9–12. The application provides topic-based exercises alongside model and previous national examination questions, enabling students to prepare efficiently from a single application.",
+    "features": [
+      {
+        "title": "Topic-Based Learning",
+        "description": "Practice questions organized by subject and topic across Grades 9–12.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Model & Previous Exams",
+        "description": "Access to model examinations and previous national Matric exam papers.",
+        "icon": "Award",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Secure Authentication",
+        "description": "Firebase Authentication provides a secure and seamless login experience.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Progress-Oriented Experience",
+        "description": "Designed to encourage consistent study through an intuitive and distraction-free interface.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "The application follows a scalable architecture that separates business logic from presentation while maintaining responsive performance.",
+    "architectureBullets": ["GETX STATE MANAGEMENT", "SUPABASE DATABASE", "FIREBASE AUTHENTICATION"],
+    "techBadges": [
+      { "label": "UI Framework", "value": "Flutter" },
+      { "label": "Language", "value": "Dart" },
+      { "label": "Backend", "value": "Supabase" },
+      { "label": "Authentication", "value": "Firebase" }
+    ]
+  },
+  {
+    "id": "eshetalehu",
+    "title": "Eshetalehu",
+    "subtitle": "Marketplace application that connects buyers and sellers of used goods in a secure environment with real-time chat.",
+    "description": "Marketplace application that connects buyers and sellers of used goods in a secure environment with real-time chat.",
+    "category": "MOBILE APPS",
+    "categoryTag": "MARKETPLACE • MOBILE APP",
+    "status": "Completed",
+    "year": "2025",
+    "featured": false,
+    "homeFeatured": true,
+    "tags": ["FLUTTER", "SUPABASE", "FIREBASE", "BLOC"],
+    "githubLink": "https://github.com/Abrom-code/eshetalehu",
+    "demoLink": "",
+    "mockupType": "mobile",
+    "role": "Flutter Developer",
+    "techStack": "Flutter, Supabase, Firebase",
+    "duration": "5 Months",
+    "problem": "Buying and selling second-hand products through social media often lacks trust, organization, and effective communication between buyers and sellers.",
+    "solution": "Eshetalehu is a marketplace application that connects buyers and sellers of used goods in a secure and user-friendly environment, complete with real-time messaging.",
+    "features": [
+      {
+        "title": "Marketplace Listings",
+        "description": "Browse and publish second-hand products with detailed information.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Real-Time Chat",
+        "description": "Direct communication between buyers and sellers.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Secure User Accounts",
+        "description": "Firebase Authentication ensures secure user access.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Smart Product Browsing",
+        "description": "Simple interface for discovering products quickly.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Built using modern Flutter architecture for maintainability and scalability.",
+    "architectureBullets": ["BLOC STATE MANAGEMENT", "SUPABASE DATABASE", "FIREBASE AUTHENTICATION"],
+    "techBadges": [
+      { "label": "UI Framework", "value": "Flutter" },
+      { "label": "Language", "value": "Dart" },
+      { "label": "Backend", "value": "Supabase" },
+      { "label": "Authentication", "value": "Firebase" }
+    ]
+  },
+  {
+    "id": "amharic-typing",
+    "title": "Amharic Typing",
+    "subtitle": "Interactive web platform designed to improve typing speed and accuracy through Amharic lessons and real-time practice.",
+    "description": "Interactive web platform designed to improve typing speed and accuracy through Amharic lessons and real-time practice.",
+    "category": "FULL-STACK",
+    "categoryTag": "EDUCATION • WEB APP",
+    "status": "Completed",
+    "year": "2024",
+    "featured": false,
+    "homeFeatured": true,
+    "tags": ["REACT", "TAILWIND CSS", "JAVASCRIPT"],
+    "githubLink": "https://github.com/Abrom-code/amharic_typing",
+    "demoLink": "https://amharic-typing.vercel.app/",
+    "mockupType": "desktop",
+    "role": "Frontend Developer",
+    "techStack": "React, Tailwind CSS",
+    "duration": "3 Months",
+    "problem": "There are very few dedicated platforms that help Ethiopians improve their Amharic typing skills, making it difficult for learners to practice efficiently.",
+    "solution": "Amharic Typing is an interactive web platform designed to improve typing speed and accuracy through structured lessons and real-time practice sessions.",
+    "features": [
+      {
+        "title": "Interactive Lessons",
+        "description": "Guided lessons for learning Amharic keyboard layouts.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Live Typing Practice",
+        "description": "Measure typing speed and accuracy in real time.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Progress Tracking",
+        "description": "Monitor improvement across practice sessions.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Responsive Interface",
+        "description": "Optimized for desktop and mobile browsers.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "A lightweight frontend application focused on speed and responsiveness.",
+    "architectureBullets": ["REACT", "TAILWIND CSS", "RESPONSIVE DESIGN"],
+    "techBadges": [
+      { "label": "Frontend", "value": "React" },
+      { "label": "Styling", "value": "Tailwind CSS" },
+      { "label": "Language", "value": "JavaScript" }
+    ]
+  },
+  {
+    "id": "ethioride",
+    "title": "EthioRide",
+    "subtitle": "Distributed ride-booking application simulating ride-sharing workflows while demonstrating networking and concurrency concepts.",
+    "description": "Distributed ride-booking application simulating ride-sharing workflows while demonstrating networking and concurrency concepts.",
+    "category": "BACKEND",
+    "categoryTag": "NETWORKING • DISTRIBUTED APP",
+    "status": "Completed",
+    "year": "2024",
+    "featured": false,
+    "homeFeatured": false,
+    "tags": ["JAVA", "JAVA SOCKETS", "MYSQL"],
+    "githubLink": "https://github.com/Maxd646/EthioRide",
+    "demoLink": "",
+    "mockupType": "backend",
+    "role": "Java Developer",
+    "techStack": "Java, MySQL",
+    "duration": "4 Months",
+    "problem": "Ride-hailing platforms require efficient request management, driver coordination, and reliable communication between multiple users.",
+    "solution": "EthioRide is a distributed ride-booking application developed to simulate the core workflow of modern ride-sharing platforms while demonstrating networking and concurrent programming concepts.",
+    "features": [
+      {
+        "title": "Ride Requests",
+        "description": "Passengers can request transportation services.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Driver Management",
+        "description": "Drivers receive and manage ride requests.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Concurrent Sync",
+        "description": "Supports multiple connected clients simultaneously.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Database Integration",
+        "description": "Persistent ride and user information storage.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Designed as a distributed Java application with networking support.",
+    "architectureBullets": ["MULTITHREADED SERVER", "JAVA SOCKET PROGRAMMING", "MYSQL DATABASE"],
+    "techBadges": [
+      { "label": "Language", "value": "Java" },
+      { "label": "Database", "value": "MySQL" }
+    ]
+  },
+  {
+    "id": "noteify",
+    "title": "Noteify",
+    "subtitle": "Lightweight note-taking web application to organize, edit, and manage personal notes with persistent storage.",
+    "description": "Lightweight note-taking web application to organize, edit, and manage personal notes with persistent storage.",
+    "category": "FULL-STACK",
+    "categoryTag": "PRODUCTIVITY • WEB APP",
+    "status": "Completed",
+    "year": "2023",
+    "featured": false,
+    "homeFeatured": false,
+    "tags": ["HTML", "CSS", "JAVASCRIPT", "PHP", "MYSQL"],
+    "githubLink": "https://github.com/Maxd646/Noteify--Note",
+    "demoLink": "",
+    "mockupType": "desktop",
+    "role": "Full-Stack Developer",
+    "techStack": "PHP, MySQL, JS",
+    "duration": "2 Months",
+    "problem": "Students and professionals need a simple platform for organizing notes without unnecessary complexity.",
+    "solution": "Noteify is a lightweight web application that enables users to create, organize, edit, and manage personal notes.",
+    "features": [
+      {
+        "title": "Create Notes",
+        "description": "Quickly create and organize notes.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "CRUD functionality",
+        "description": "Manage notes with full CRUD actions.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Clean Interface",
+        "description": "Simple and responsive design layout.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Persistent Storage",
+        "description": "Notes stored securely in a MySQL database.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Traditional client-server web architecture.",
+    "architectureBullets": ["HTML / CSS / JS", "PHP BACKEND", "MYSQL DATABASE"],
+    "techBadges": [
+      { "label": "Frontend", "value": "HTML, CSS, JS" },
+      { "label": "Backend", "value": "PHP" },
+      { "label": "Database", "value": "MySQL" }
+    ]
+  },
+  {
+    "id": "intelicoach",
+    "title": "InteliCoach",
+    "subtitle": "Java-based student coaching desktop application designed to organize study schedules, task priorities, and goals.",
+    "description": "Java-based student coaching desktop application designed to organize study schedules, task priorities, and goals.",
+    "category": "BACKEND",
+    "categoryTag": "UTILITY • DESKTOP APP",
+    "status": "Completed",
+    "year": "2023",
+    "featured": false,
+    "homeFeatured": false,
+    "tags": ["JAVA", "MYSQL", "MVC DESIGN"],
+    "githubLink": "https://github.com/Abrom-code/IntelliCoach",
+    "demoLink": "",
+    "mockupType": "backend",
+    "role": "Java Developer",
+    "techStack": "Java, MySQL",
+    "duration": "3 Months",
+    "problem": "Students often struggle with effective time management, resulting in poor study habits and reduced productivity.",
+    "solution": "InteliCoach helps students organize their schedules, prioritize tasks, and build productive study routines.",
+    "features": [
+      {
+        "title": "Task Scheduling",
+        "description": "Create and organize daily study plans.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Time Management",
+        "description": "Manage study sessions efficiently.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Goal Tracking",
+        "description": "Track completed activities.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Student Dashboard",
+        "description": "Simple interface for monitoring progress.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Desktop application built with Java and MySQL.",
+    "architectureBullets": ["JAVA", "MYSQL DATABASE", "MVC DESIGN"],
+    "techBadges": [
+      { "label": "Language", "value": "Java" },
+      { "label": "Database", "value": "MySQL" }
+    ]
+  },
+  {
+    "id": "exam-system",
+    "title": "Exam Management System",
+    "subtitle": "Performance-focused C++ desktop examination management system enabling online test administration and automatic results.",
+    "description": "Performance-focused C++ desktop examination management system enabling online test administration and automatic results.",
+    "category": "BACKEND",
+    "categoryTag": "EDUCATION • DESKTOP APP",
+    "status": "Completed",
+    "year": "2023",
+    "featured": false,
+    "homeFeatured": false,
+    "tags": ["C++", "MYSQL", "OBJECT-ORIENTED DESIGN"],
+    "githubLink": "https://github.com/Maxd646/Online-Examination-System",
+    "demoLink": "",
+    "mockupType": "backend",
+    "role": "C++ Developer",
+    "techStack": "C++, MySQL",
+    "duration": "4 Months",
+    "problem": "Educational institutions require efficient systems for conducting online examinations while maintaining organized records.",
+    "solution": "An examination management system that enables online test administration and result management.",
+    "features": [
+      {
+        "title": "Online Exams",
+        "description": "Conduct examinations digitally.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Student Management",
+        "description": "Manage registered candidates.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Question Manager",
+        "description": "Store and organize examination questions.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Result Processing",
+        "description": "Automatically calculate examination results.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Performance-focused desktop application.",
+    "architectureBullets": ["C++", "MYSQL DATABASE", "OBJECT-ORIENTED DESIGN"],
+    "techBadges": [
+      { "label": "Language", "value": "C++" },
+      { "label": "Database", "value": "MySQL" }
+    ]
+  },
+  {
+    "id": "task-manager",
+    "title": "Task Manager",
+    "subtitle": "Lightweight task management web application designed to organize work efficiently through a clean user experience.",
+    "description": "Lightweight task management web application designed to organize work efficiently through a clean user experience.",
+    "category": "FULL-STACK",
+    "categoryTag": "PRODUCTIVITY • WEB APP",
+    "status": "Completed",
+    "year": "2025",
+    "featured": false,
+    "homeFeatured": false,
+    "tags": ["REACT", "TAILWIND CSS", "JAVASCRIPT"],
+    "githubLink": "https://github.com/Abrom-code/task-manager",
+    "demoLink": "http://todo-red-ten.vercel.app/",
+    "mockupType": "desktop",
+    "role": "Frontend Developer",
+    "techStack": "React, Tailwind CSS",
+    "duration": "2 Months",
+    "problem": "Managing daily tasks can become overwhelming without a simple and intuitive productivity tool.",
+    "solution": "A lightweight task management application designed to organize work efficiently through a clean user experience.",
+    "features": [
+      {
+        "title": "Task Organization",
+        "description": "Create and manage daily tasks.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Status Tracking",
+        "description": "Monitor completed and pending work.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Responsive Layout",
+        "description": "Works across desktop and mobile devices.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Clean UX",
+        "description": "Minimal interface focused on productivity.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Modern frontend application.",
+    "architectureBullets": ["REACT", "TAILWIND CSS", "COMPONENT-BASED ARCHITECTURE"],
+    "techBadges": [
+      { "label": "Frontend", "value": "React" },
+      { "label": "Styling", "value": "Tailwind CSS" },
+      { "label": "Language", "value": "JavaScript" }
+    ]
+  },
+  {
+    "id": "shop",
+    "title": "Shop",
+    "subtitle": "Flutter-based e-commerce application that enables users to browse products, manage carts, and authenticate using Firebase.",
+    "description": "Flutter-based e-commerce application that enables users to browse products, manage carts, and authenticate using Firebase.",
+    "category": "MOBILE APPS",
+    "categoryTag": "E-COMMERCE • MOBILE APP",
+    "status": "Completed",
+    "year": "2025",
+    "featured": false,
+    "homeFeatured": false,
+    "tags": ["FLUTTER", "MONGODB", "FIREBASE"],
+    "githubLink": "https://github.com/Abrom-code/shop",
+    "demoLink": "",
+    "mockupType": "mobile",
+    "role": "Flutter Developer",
+    "techStack": "Flutter, MongoDB, Firebase",
+    "duration": "5 Months",
+    "problem": "Modern e-commerce platforms should provide fast product browsing, secure authentication, and a seamless shopping experience on mobile devices.",
+    "solution": "Shop is a Flutter-based e-commerce application that enables users to browse products, manage their shopping experience, and securely authenticate using Firebase.",
+    "features": [
+      {
+        "title": "Product Catalog",
+        "description": "Browse products through an organized interface.",
+        "icon": "Layers",
+        "iconColor": "text-accentBlue"
+      },
+      {
+        "title": "Secure Auth",
+        "description": "Firebase Authentication for secure user accounts.",
+        "icon": "Code",
+        "iconColor": "text-accentPurple"
+      },
+      {
+        "title": "Mobile-first Shopping",
+        "description": "Designed with a modern mobile-first interface.",
+        "icon": "ShieldCheck",
+        "iconColor": "text-indigo-400"
+      },
+      {
+        "title": "Cloud Database",
+        "description": "Product and user data managed through MongoDB.",
+        "icon": "Compass",
+        "iconColor": "text-pink-400"
+      }
+    ],
+    "architectureText": "Built using Flutter with cloud-based backend services.",
+    "architectureBullets": ["FLUTTER", "MONGODB DATABASE", "FIREBASE AUTHENTICATION"],
+    "techBadges": [
+      { "label": "UI Framework", "value": "Flutter" },
+      { "label": "Language", "value": "Dart" },
+      { "label": "Database", "value": "MongoDB" },
+      { "label": "Authentication", "value": "Firebase" }
+    ]
+  }
+]

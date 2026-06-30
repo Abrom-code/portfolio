@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
-
+import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -38,6 +38,7 @@ function App() {
                 navigateTo('detail');
               }}
             />
+            <Certifications />
             <Testimonials />
             <Contact />
           </>
