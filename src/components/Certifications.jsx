@@ -42,6 +42,24 @@ export default function Certifications() {
       iconColor: 'text-accentPurple',
       iconBg: 'bg-accentPurple/10',
     },
+    {
+      title: 'AWS SBG Core Team Member Badge',
+      organization: 'Amazon Web Services (AWS Community)',
+      status: 'Certified',
+      focus: 'Student Builder Group Leadership & Community',
+      description:
+        'Official recognition as an AWS Student Builder Group Core Team member. As a core team member, contributed to building and developing the AWS Student Builder Group on campus — organizing events, driving student engagement, and fostering a community around cloud computing and AWS technologies.',
+      skills: [
+        'Community Building',
+        'Organization and Leadership',
+        'Student Engagement',
+      ],
+      link: 'https://www.credly.com/badges/7c499738-4cf8-46fe-a7c9-c72e67d9d9da/linked_in_profile',
+      iconColor: 'text-amber-400',
+      iconBg: 'bg-amber-400/10',
+      credentialId: '7c499738-4cf8-46fe-a7c9-c72e67d9d9da',
+      issuedDate: 'Jul 2026',
+    },
   ];
 
   return (
@@ -61,7 +79,7 @@ export default function Certifications() {
         </div>
 
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {certifications.map((cert, idx) => (
             <div
               key={idx}
@@ -124,8 +142,19 @@ export default function Certifications() {
                 </div>
               </div>
 
-              {/* Action Button Link */}
-              <div className="border-t border-white/5 pt-6 mt-6 flex justify-end">
+              <div className="border-t border-white/5 pt-6 mt-6 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-col gap-0.5">
+                  {cert.issuedDate && (
+                    <span className="font-sans text-[10px] text-slate-500">
+                      Issued: <span className="text-slate-400">{cert.issuedDate}</span>
+                    </span>
+                  )}
+                  {cert.credentialId && (
+                    <span className="font-sans text-[9px] text-slate-600 truncate max-w-[180px]">
+                      ID: {cert.credentialId}
+                    </span>
+                  )}
+                </div>
                 <a
                   href={cert.link}
                   target="_blank"
