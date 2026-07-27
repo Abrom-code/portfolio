@@ -1,14 +1,53 @@
+:root {
+  --bg-color: #f8fafc;
+  --card-color: #ffffff;
+  --card-hover-color: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-hover-color: rgba(0, 0, 0, 0.12);
+  --glow-opacity: 0.05;
+  --scrollbar-track: #f8fafc;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+  --input-bg: #ffffff;
+}
+
+.dark {
+  --bg-color: #090A0C;
+  --card-color: #121316;
+  --card-hover-color: #18191D;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --border-hover-color: rgba(255, 255, 255, 0.1);
+  --glow-opacity: 0.15;
+  --scrollbar-track: #090A0C;
+  --scrollbar-thumb: #1F2023;
+  --scrollbar-thumb-hover: #2E3035;
+  --input-bg: #090A0C;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-darkBg: #090A0C;
-  --color-darkCard: #121316;
-  --color-darkCardHover: #18191D;
+  --color-darkBg: var(--bg-color);
+  --color-darkCard: var(--card-color);
+  --color-darkCardHover: var(--card-hover-color);
   --color-accentBlue: #818CF8;
   --color-accentPurple: #A78BFA;
   --color-accentIndigo: #4F46E5;
+  
+  --color-textPrimary: var(--text-primary);
+  --color-textSecondary: var(--text-secondary);
+  --color-textMuted: var(--text-muted);
+  --color-customBorder: var(--border-color);
+  --color-customBorderHover: var(--border-hover-color);
+  --color-inputBg: var(--input-bg);
 
   --font-sans: 'Inter', sans-serif;
   --font-outfit: 'Outfit', sans-serif;
@@ -30,10 +69,11 @@
   width: 400px;
   height: 400px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.15) 0%, rgba(167, 139, 250, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  background: radial-gradient(circle, rgba(129, 140, 248, var(--glow-opacity)) 0%, rgba(167, 139, 250, calc(var(--glow-opacity) / 3)) 50%, rgba(0, 0, 0, 0) 100%);
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
+  transition: all 0.3s ease;
 }
 
 /* Custom scrollbar */
@@ -41,14 +81,16 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #090A0C;
+  background: var(--scrollbar-track);
+  transition: background-color 0.3s ease;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1F2023;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2E3035;
+  background: var(--scrollbar-thumb-hover);
 }
 
 html {
@@ -56,17 +98,19 @@ html {
 }
 
 body {
-  background-color: var(--color-darkBg);
-  color: #cbd5e1; /* slate-300 */
+  background-color: var(--bg-color);
+  color: var(--text-secondary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-outfit);
-  color: #ffffff;
+  color: var(--text-primary);
   tracking: -0.025em;
+  transition: color 0.3s ease;
 }
 
 /* Base custom classes to match template layout */

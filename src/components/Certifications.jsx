@@ -49,10 +49,10 @@ export default function Certifications() {
       {/* Visual background glows */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 glow-backdrop w-[500px] h-[500px] opacity-20 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-outfit text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
             Certifications
           </h2>
           <p className="font-sans text-slate-400 max-w-lg mx-auto">
@@ -65,7 +65,7 @@ export default function Certifications() {
           {certifications.map((cert, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-darkCard border border-white/5 text-left flex flex-col justify-between hover:border-white/10 hover:bg-darkCardHover transition-all duration-300 hover:-translate-y-1 shadow-xl group relative overflow-hidden"
+              className="p-6 sm:p-8 rounded-3xl bg-darkCard border border-white/5 text-left flex flex-col justify-between hover:border-white/10 hover:bg-darkCardHover transition-all duration-300 hover:-translate-y-1 shadow-xl group relative overflow-hidden"
             >
               {/* Top gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none" />

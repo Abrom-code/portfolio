@@ -5,12 +5,12 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/5 bg-[#090A0C] py-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Brand details */}
         <div className="text-left space-y-1">
           <div className="font-outfit font-bold text-lg text-white">
-            <span className="bg-gradient-to-r from-accentBlue to-accentPurple text-transparent bg-clip-text">Abrham Teramed</span>
+          <span className="text-accentBlue">Abrham Teramed</span>
           </div>
           <p className="font-sans text-xs text-slate-500">
             © {currentYear} Abrham Teramed. All rights reserved. Built with passion.

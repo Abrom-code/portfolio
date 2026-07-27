@@ -14,6 +14,31 @@ function App() {
   const [page, setPage] = useState('home'); // 'home' | 'archive' | 'detail'
   const [prevPage, setPrevPage] = useState('home');
   const [selectedProject, setSelectedProject] = useState('matricmate');
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        return savedTheme;
+      }
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return systemPrefersDark ? 'dark' : 'light';
+    }
+    return 'dark';
+  });
+
+  React.useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   const navigateTo = (nextPage) => {
     setPrevPage(page);
@@ -21,9 +46,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-darkBg text-slate-300 flex flex-col font-sans selection:bg-accentIndigo selection:text-white antialiased">
+    <div className="min-h-screen bg-darkBg text-textSecondary flex flex-col font-sans selection:bg-accentIndigo selection:text-white antialiased">
       {/* Navigation Header */}
-      <Header page={page} setPage={navigateTo} />
+      <Header page={page} setPage={navigateTo} theme={theme} toggleTheme={toggleTheme} />
 
       {/* Main Content Routing Sections */}
       <main className="flex-grow">

@@ -28,15 +28,15 @@ export default function Contact() {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glow-backdrop w-[500px] h-[500px] opacity-40" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Main Card Container */}
-        <div className="rounded-3xl bg-darkCard border border-white/5 p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 text-left">
+        <div className="rounded-3xl bg-darkCard border border-white/5 p-6 sm:p-8 md:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 text-left">
           
           {/* Left Info Column */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-8">
             <div className="space-y-6">
-              <h2 className="font-outfit text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.2]">
+              <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.2]">
                 Let's Build Something Exceptional
               </h2>
               <p className="font-sans text-slate-400 leading-relaxed max-w-sm">

@@ -59,11 +59,11 @@ export default function TechStack() {
 
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="font-outfit text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+        <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary tracking-tight mb-4">
           Technical Stack
         </h2>
-        <p className="font-sans text-slate-400 max-w-lg mx-auto mb-16">
+        <p className="font-sans text-textMuted max-w-lg mx-auto mb-16">
           A selection of tools and technologies I use to build scalable products.
         </p>
 
@@ -72,15 +72,15 @@ export default function TechStack() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl bg-darkCard border border-white/5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-white/10 hover:bg-darkCardHover group flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-darkCard border border-customBorder text-left transition-all duration-300 hover:-translate-y-1 hover:border-customBorderHover hover:bg-darkCardHover group flex flex-col justify-between"
             >
               <div>
                 {/* Card Header */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
+                  <div className="p-2.5 rounded-xl bg-black/5 dark:bg-white/5 group-hover:bg-black/10 dark:group-hover:bg-white/10 transition-colors">
                     {category.icon}
                   </div>
-                  <h3 className="font-outfit text-lg font-bold text-white">
+                  <h3 className="font-outfit text-lg font-bold text-textPrimary">
                     {category.title}
                   </h3>
                 </div>
@@ -88,7 +88,7 @@ export default function TechStack() {
                 {/* Skills List as checkmarked bullets */}
                 <ul className="space-y-3.5">
                   {category.skills.map((skill, sIdx) => (
-                    <li key={sIdx} className="flex items-center gap-2.5 text-sm text-slate-300 font-sans font-medium">
+                    <li key={sIdx} className="flex items-center gap-2.5 text-sm text-textSecondary font-sans font-medium">
                       <Check size={14} className="text-accentBlue flex-shrink-0" />
                       <span>{skill.name}</span>
                     </li>
